@@ -19,13 +19,12 @@ public class Server2 {
 
         for (int i = 0; i < 10; i++) {
 
-            Socket client = serverSocket.accept();
+            Socket client = serverSocket.accept(); // 브라우저와 연결된 소켓
 
             System.out.println(client);
 
             File file = new File("C:\\Users\\82102\\aaa.jpg");
-
-            OutputStream out = client.getOutputStream();
+            OutputStream out = client.getOutputStream(); // 브라우저에 보낼
 
 
             out.write(new String("HTTP/1.1 200 OK\r\n").getBytes());
